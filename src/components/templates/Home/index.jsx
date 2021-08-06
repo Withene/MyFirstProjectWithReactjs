@@ -4,7 +4,7 @@ import {  useCallback, useEffect, useState } from 'react';
 import { loadPost } from '../../../utils/load-post';
 import { Post } from '../../Post';
 import { Button } from '../../button';
-import { Textinput } from '../../Input';
+import { TextInput } from '../../Input';
 
 
 const Home = () => {
@@ -49,8 +49,7 @@ const Home = () => {
     const { value } = e.target;
     setSearchValue(value);
   }
-
-
+  
   return (
     <section className="container">
       {!!searchValue && (
@@ -58,7 +57,7 @@ const Home = () => {
           <h3>Serach Value: {searchValue}</h3>
         </>
       )}
-      <Textinput searchValue={searchValue} handleChange={handleChange} />
+      <TextInput searchValue={searchValue} handleChange={handleChange} />
       {FilteredPosts.length > 0 && (
         <Post posts={FilteredPosts} />
       )}
