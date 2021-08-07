@@ -1,4 +1,5 @@
 import { PostCard } from '../PostCard';
+import P from 'prop-types';
 import './style.css';
 
 export const Post = ({ posts = [] }) => {
@@ -9,4 +10,18 @@ export const Post = ({ posts = [] }) => {
       ))}
     </div>
   );
+};
+Post.defaultProps = {
+  posts: [],
+};
+
+Post.propTypes = {
+  posts: P.arrayOf(
+    P.shape({
+      title: P.string.isRequired,
+      cover: P.string.isRequired,
+      body: P.string.isRequired,
+      id: P.number.isRequired,
+    }),
+  ),
 };
