@@ -2,7 +2,7 @@ import { PostCard } from '../PostCard';
 import P from 'prop-types';
 import './style.css';
 
-export const Post = ({ posts = [] }) => {
+export const Post = ({ posts }) => {
   return (
     <div className="posts">
       {posts.map((post) => (
